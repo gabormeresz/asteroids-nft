@@ -8,10 +8,12 @@ Welcome to the Asteroids project — an experimental NFT collection featuring 10
 
 - **Smart Contract:** The Asteroids NFTs are governed by a custom ERC-721 smart contract deployed on the Mumbai Testnet.
 
+- **Metadata Hosting:** The metadata and the images for each Asteroid NFT is securely hosted on IPFS via Pinata.
+
 ## Getting Started
 
 1. **Explore the Cosmos:** Visit the [Asteroids](https://asteroids-nft.vercel.app/) website.
 
-2. **Mint Your Asteroid:** Connect your wallet to the Mumbai Testnet, and mint one asteroid for free. Each asteroid is a one-of-a-kind creation from the experiment.
+2. **Mint Your Asteroid:** Connect your wallet to the Mumbai Testnet, and mint one asteroid for free. Each Asteroid NFT is a one-of-a-kind creation from the experiment.
 
 Enjoy the cosmic wonders of Asteroids! 🚀
