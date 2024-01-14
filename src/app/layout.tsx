@@ -5,6 +5,7 @@ import backgroundImage from "../../public/background.jpg";
 import "./globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://asteroids-nft.vercel.app"),
   title: "Asteroids NFT",
   description: "A Collection of 100 AI generated asteroid NFTs",
   openGraph: {
