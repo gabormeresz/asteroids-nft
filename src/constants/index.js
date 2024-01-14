@@ -1,4 +1,4 @@
-export const contractAddress = "0x7d5c5758C0B4bb9504c594d9d0A31250523e6C63";
+export const contractAddress = "0x621550bECf6aCf7fDFf6b5D51b3bCCD8490A4D33";
 export const contractABI = [
   {
     inputs: [
@@ -503,6 +503,19 @@ export const contractABI = [
       }
     ],
     name: "setBaseURI",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "maxMint",
+        type: "uint256"
+      }
+    ],
+    name: "setMaxMintPerAddress",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function"
