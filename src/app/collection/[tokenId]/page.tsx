@@ -43,6 +43,8 @@ const TokenPage = async ({ params }: TokenPageProps) => {
           width={640}
           height={640}
           priority
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNkqGfAAIxDWRAAOIQFAap6xDkAAAAASUVORK5CYII="
           className="rounded-3xl drop-shadow-sm-black md:min-w-[350px] lg:min-w-[400px] xl:min-w-[450px] 2xl:min-w-[500px] object-contain"
         />
         <TokenDescription rarity={rarity} lore={lore} traits={traits} />
