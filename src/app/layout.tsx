@@ -5,8 +5,11 @@ import backgroundImage from "../../public/background.jpg";
 import "./globals.css";
 
 export const metadata = {
-  title: "Web3Modal",
-  description: "Web3Modal Example"
+  title: "Asteroids NFT",
+  description: "A Collection of 100 AI generated asteroid NFTs",
+  openGraph: {
+    images: "/background.jpg"
+  }
 };
 
 interface Props {
