@@ -11,9 +11,9 @@ const Header = () => {
         <div className="flex flex-row items-center">
           <Image src={logo} alt="logo" />
           <div
-            className={`${lexend_zetta.variable} font-logo text-neon text-sm font-light pl-2`}
+            className={`${lexend_zetta.variable} font-logo text-neon text-sm font-light pl-2 invisible sm:visible`}
           >
-            COSMOSCRAZE
+            ASTEROIDS
           </div>
         </div>
       </Link>

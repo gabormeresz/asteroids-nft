@@ -13,6 +13,7 @@ import { contractAddress, contractABI } from "@/constants/index";
 import Button from "@/components/ui/button";
 import Loading from "@/components/ui/loading";
 import MintingModal from "@/components/home/minting-modal";
+import ConnectButton from "@/components/layout/connect-button";
 
 const HomeDynamicContent = () => {
   const { walletProvider } = useWeb3ModalProvider();
@@ -67,32 +68,35 @@ const HomeDynamicContent = () => {
 
   if (!isConnected) {
     content = (
-      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48">
+      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48 px-10">
         <div
           className={`flex flex-col items-center gap-2 text-white font-light ${jura.variable} font-mono`}
         >
           <h2 className="text-2xl">
             Welcome to the Cosmos Craze Minting Page,
           </h2>
-          <p className="text-center	">
-            where celestial wonders and cosmic whimsy collide! Unleash your
-            stellar creativity by connecting your wallet and minting a
-            one-of-a-kind NFT from our vibrant asteroid collection. Connect now
-            and mint your celestial masterpiece! 🚀💫
-          </p>
+          <div className="pb-8">
+            <p className="sm:text-center">
+              where celestial wonders and cosmic whimsy collide! Unleash your
+              stellar creativity by connecting your wallet and minting a
+              one-of-a-kind NFT from our vibrant asteroid collection. Connect
+              now and mint your celestial masterpiece! 🚀💫
+            </p>
+          </div>
+          <ConnectButton />
         </div>
       </div>
     );
   } else if (chainId !== 80001) {
     content = (
-      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48">
+      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48 px-10">
         <div
           className={`flex flex-col items-center gap-2 text-white font-light ${jura.variable} font-mono`}
         >
           <h2 className="text-2xl">
             Welcome to the Cosmos Craze Minting Page,
           </h2>
-          <p className="text-center">
+          <p className="sm:text-center">
             dive into a universe of color, neon brilliance, and playful memes as
             you embark on a journey to claim your own piece of the cosmic
             mosaic.
@@ -109,14 +113,14 @@ const HomeDynamicContent = () => {
     content = <Loading />;
   } else if (!userTokenId) {
     content = (
-      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48">
+      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48 px-10">
         <div
           className={`flex flex-col items-center gap-2 text-white font-light ${jura.variable} font-mono`}
         >
           <h2 className="text-2xl">
             Welcome to the Cosmos Craze Minting Page,
           </h2>
-          <p className="text-center">
+          <p className="sm:text-center">
             dive into a universe of color, neon brilliance, and playful memes as
             you embark on a journey to claim your own piece of the cosmic
             mosaic.
@@ -128,12 +132,12 @@ const HomeDynamicContent = () => {
     );
   } else {
     content = (
-      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48">
+      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48 px-10">
         <div
           className={`flex flex-col items-center gap-2 text-white font-light ${jura.variable} font-mono`}
         >
           <h2 className="text-2xl">Congratulations, cosmic explorer!</h2>
-          <p className="text-center	">
+          <p className="sm:text-center	">
             Welcome to the Cosmos Craze galaxy, where your celestial treasure is
             now yours to cherish and share across the cosmos! ✨
           </p>
