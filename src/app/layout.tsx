@@ -8,7 +8,7 @@ export const metadata = {
   title: "Asteroids NFT",
   description: "A Collection of 100 AI generated asteroid NFTs",
   openGraph: {
-    images: "/background.jpg"
+    images: "/asteroid-3.jpg"
   }
 };
 
