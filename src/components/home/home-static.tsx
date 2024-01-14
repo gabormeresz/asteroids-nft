@@ -16,7 +16,7 @@ const HomeStaticContent = () => {
       >
         The Asteroids Collection
       </h1>
-      <div className="flex flex-row items-center justify-between max-w-4xl px-1 ">
+      <div className="flex flex-row items-center justify-between max-w-4xl px-1 sm:px-8">
         <Image
           src={asteroid1}
           alt="asteroid"
