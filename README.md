@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Asteroids NFT Collection
+
+Welcome to the Asteroids project — an experimental NFT collection featuring 100 unique cosmic asteroids. Each NFT within this collection is a product of the intersection between DALL-E's image generation and CHAT-GPT's copywriting, resulting in a distinctive cosmic experience.
+
+## Project Overview
+
+- **Web App:** The user-friendly web interface is crafted with Next.js 14 and hosted on Vercel.
+
+- **Smart Contract:** The Asteroids NFTs are governed by a custom ERC-721 smart contract deployed on the Mumbai Testnet.
 
 ## Getting Started
 
-First, run the development server:
+1. **Explore the Cosmos:** Visit the [Asteroids](https://asteroids-nft.vercel.app/) website.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Mint Your Asteroid:** Connect your wallet to the Mumbai Testnet, and mint one asteroid for free. Each asteroid is a one-of-a-kind creation from the experiment.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Enjoy the cosmic wonders of Asteroids!
