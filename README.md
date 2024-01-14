@@ -1,4 +1,4 @@
-# Asteroids NFT Collection
+# Asteroids NFT Collection 🌠
 
 Welcome to the Asteroids project — an experimental NFT collection featuring 100 unique cosmic asteroids. Each NFT within this collection is a product of the intersection between DALL-E's image generation and CHAT-GPT's copywriting, resulting in a distinctive cosmic experience.
 
@@ -14,4 +14,4 @@ Welcome to the Asteroids project — an experimental NFT collection featuring 10
 
 2. **Mint Your Asteroid:** Connect your wallet to the Mumbai Testnet, and mint one asteroid for free. Each asteroid is a one-of-a-kind creation from the experiment.
 
-Enjoy the cosmic wonders of Asteroids!
+Enjoy the cosmic wonders of Asteroids! 🚀
