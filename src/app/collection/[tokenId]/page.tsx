@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { jura } from "@/fonts";
-import * as actions from "@/actions";
 import * as utils from "@/utils";
 import Button from "@/components/ui/button";
 import ShowTokenOwner from "@/components/token/token-owner";
 import TokenDescription from "@/components/token/token-description";
+import { maxSupply } from "@/constants";
 
 type TokenPageProps = {
   params: {
@@ -14,15 +14,21 @@ type TokenPageProps = {
   };
 };
 
+export function generateStaticParams() {
+  const staticParams = utils
+    .range(1, maxSupply)
+    .map((id) => ({ tokenId: id.toString() }));
+  return staticParams;
+}
+
 const TokenPage = async ({ params }: TokenPageProps) => {
-  const [tokenURI, tokenOwner] = await actions.getTokenURIAndOwner(
+  const [tokenURI, tokenOwner] = await utils.getTokenURIAndOwner(
     params.tokenId
   );
-  const metadata = await actions.fetchMetaData(tokenURI);
+  if (!tokenURI) notFound();
 
-  if (!metadata) {
-    notFound();
-  }
+  const metadata = await utils.fetchMetaData(tokenURI);
+  if (!metadata) notFound();
 
   const { rarity, lore, traits } = utils.prepareMetadata(metadata);
 
@@ -42,7 +48,6 @@ const TokenPage = async ({ params }: TokenPageProps) => {
           alt="asteroid"
           width={640}
           height={640}
-          priority
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNkqGfAAIxDWRAAOIQFAap6xDkAAAAASUVORK5CYII="
           className="rounded-3xl drop-shadow-sm-black md:min-w-[350px] lg:min-w-[400px] xl:min-w-[450px] 2xl:min-w-[500px] object-contain"

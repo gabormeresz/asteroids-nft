@@ -1,11 +1,7 @@
-"use server";
-
 import { ethers } from "ethers";
 import { contractABI, contractAddress } from "@/constants";
 
-export const getTokenURIAndOwner = async (tokenId: string) => {
-  let tokenURI = "";
-  let tokenOwner = "";
+export const getTotalMintedItems = async () => {
   try {
     const provider = new ethers.JsonRpcProvider(
       process.env.POLYGON_MUMBAI_RPC_PROVIDER
@@ -15,10 +11,9 @@ export const getTokenURIAndOwner = async (tokenId: string) => {
       contractABI,
       provider
     );
-    tokenURI = await contract.tokenURI(tokenId);
-    tokenOwner = await contract.ownerOf(tokenId);
+    const totalSupply = parseInt(await contract.totalSupply());
+    return totalSupply;
   } catch (err) {
-    console.error("Error fetching data from smart contract:", err);
+    console.error("Error loading data from contract", err);
   }
-  return [tokenURI, tokenOwner];
 };

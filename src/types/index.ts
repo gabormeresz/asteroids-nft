@@ -10,6 +10,11 @@ export type Metadata = {
   attributes: Attributes[];
 };
 
+export type CollectionItem = {
+  tokenOwner: string;
+  metadata: Metadata | undefined;
+};
+
 export enum TokenRarity {
   LEGENDARY = "LEGENDARY",
   COMMON = "COMMON"

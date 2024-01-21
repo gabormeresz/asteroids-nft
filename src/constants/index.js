@@ -1,4 +1,5 @@
-export const contractAddress = "0x621550bECf6aCf7fDFf6b5D51b3bCCD8490A4D33";
+export const maxSupply = 100;
+export const contractAddress = "0xF9D60aEe12944860A7855Ba34737605422658c70";
 export const contractABI = [
   {
     inputs: [
