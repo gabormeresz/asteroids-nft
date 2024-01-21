@@ -19,9 +19,7 @@ const HomeDynamicContent = () => {
   const { walletProvider } = useWeb3ModalProvider();
   const { address, chainId, isConnected } = useWeb3ModalAccount();
   const [hasMinted, setHasMinted] = useState(false);
-  const [userTokenId, setUserTokenId] = useState<number | null | undefined>(
-    null
-  );
+  const [userTokenId, setUserTokenId] = useState<number | undefined>(undefined);
   const [tokenIdHasLoaded, setTokenIdHasLoaded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [mintTxHash, setMintTxHash] = useState("test hash");

@@ -18,7 +18,7 @@ export const getMintedTokenId = async (address: string | undefined) => {
     const userTokenCount = await contract.balanceOf(address);
 
     if (parseInt(userTokenCount) === 0) {
-      return null;
+      return undefined;
     } else {
       const userTokenId = await contract.tokenOfOwnerByIndex(address, 0);
       return parseInt(userTokenId);
