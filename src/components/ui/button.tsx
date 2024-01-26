@@ -19,12 +19,12 @@ const Button = ({
 }: ButtonProps) => {
   const buttonClassPrimary = `${
     inter.variable
-  } font-sans text-black text-sm font-semibold tracking-wide bg-neon_light p-2 px-8 rounded-full ${
+  } font-sans text-black text-sm font-semibold tracking-wider bg-neon_light p-2 px-8 rounded-full ${
     warning
       ? "disabled:rounded-sm disabled:bg-[#FFB02E] disabled:bg-opacity-50"
       : "disabled:bg-white disabled:bg-opacity-25"
   }`;
-  const buttonClassSecondary = `${inter.variable} font-sans text-neon_light text-sm font-normal tracking-wide p-2 px-8 border-solid border border-neon_light rounded-full`;
+  const buttonClassSecondary = `${inter.variable} font-sans text-neon_light text-sm font-normal tracking-wider p-2 px-8 border-solid border border-neon_light rounded-full`;
 
   return (
     <button

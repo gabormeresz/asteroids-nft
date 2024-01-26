@@ -22,14 +22,10 @@ export function generateStaticParams() {
 }
 
 const TokenPage = async ({ params }: TokenPageProps) => {
-  const [tokenURI, tokenOwner] = await utils.getTokenURIAndOwner(
-    params.tokenId
-  );
-  if (!tokenURI) notFound();
+  const nftData = await utils.getNFT(params.tokenId);
+  if (!nftData) notFound();
 
-  const metadata = await utils.fetchMetaData(tokenURI);
-  if (!metadata) notFound();
-
+  const { metadata, tokenOwner } = nftData;
   const { rarity, lore, traits } = utils.prepareMetadata(metadata);
 
   return (
@@ -54,9 +50,15 @@ const TokenPage = async ({ params }: TokenPageProps) => {
         />
         <TokenDescription rarity={rarity} lore={lore} traits={traits} />
       </div>
-      <Link href="/">
-        <Button text="BACK TO HOME" secondary />
-      </Link>
+
+      <div className="flex flex-col sm:flex-row gap-8 items-center">
+        <Link href="/">
+          <Button text="BACK TO HOME" />
+        </Link>
+        <Link href="/collection">
+          <Button text="VIEW COLLECTION" secondary />
+        </Link>
+      </div>
     </div>
   );
 };

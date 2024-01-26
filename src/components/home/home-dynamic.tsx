@@ -13,7 +13,7 @@ import { contractAddress, contractABI } from "@/constants/index";
 import Button from "@/components/ui/button";
 import Loading from "@/components/ui/loading";
 import MintingModal from "@/components/home/minting-modal";
-import ConnectButton from "@/components/layout/connect-button";
+import ConnectButton from "@/components/ui/connect-button";
 
 const HomeDynamicContent = () => {
   const { walletProvider } = useWeb3ModalProvider();
@@ -33,6 +33,9 @@ const HomeDynamicContent = () => {
       const userTokenId = await actions.getMintedTokenId(address);
       setUserTokenId(userTokenId);
       setTokenIdHasLoaded(true);
+      // if (hasMinted && userTokenId) {
+      //   actions.revalidateItem(userTokenId.toString());
+      // }
     };
     if (isConnected && chainId === 80001) {
       getMintedTokenId();
@@ -81,7 +84,12 @@ const HomeDynamicContent = () => {
               now and mint your celestial masterpiece! 🚀💫
             </p>
           </div>
-          <ConnectButton />
+          <div className="flex flex-col sm:flex-row gap-8 items-center">
+            <ConnectButton />
+            <Link href="/collection">
+              <Button text="VIEW COLLECTION" secondary />
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -100,11 +108,17 @@ const HomeDynamicContent = () => {
             mosaic.
           </p>
         </div>
-        <Button
-          text="⚠️ Wrong Network. Please change to Mumbai!"
-          disabled
-          warning
-        />
+
+        <div className="flex flex-col sm:flex-row gap-8 items-center">
+          <Button
+            text="⚠️ Wrong Network. Please change to Mumbai!"
+            disabled
+            warning
+          />
+          <Link href="/collection">
+            <Button text="VIEW COLLECTION" secondary />
+          </Link>
+        </div>
       </div>
     );
   } else if (!tokenIdHasLoaded) {
@@ -124,7 +138,13 @@ const HomeDynamicContent = () => {
             mosaic.
           </p>
         </div>
-        <Button text="MINT MY ASTEROID" onClick={mintHandler} />
+        <div className="flex flex-col sm:flex-row gap-8 items-center">
+          <Button text="MINT MY ASTEROID" onClick={mintHandler} />
+          <Link href="/collection">
+            <Button text="VIEW COLLECTION" secondary />
+          </Link>
+        </div>
+
         {isModalOpen && <MintingModal hash={mintTxHash} />}
       </div>
     );
@@ -140,9 +160,14 @@ const HomeDynamicContent = () => {
             now yours to cherish and share across the cosmos! ✨
           </p>
         </div>
-        <Link href={`/collection/${userTokenId}`}>
-          <Button text="VIEW MY ASTEROID ->" secondary />
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-8 items-center">
+          <Link href={`/collection/${userTokenId}`}>
+            <Button text="VIEW MY ASTEROID" />
+          </Link>
+          <Link href="/collection">
+            <Button text="VIEW COLLECTION" secondary />
+          </Link>
+        </div>
       </div>
     );
   }

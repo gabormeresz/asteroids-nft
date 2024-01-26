@@ -10,9 +10,19 @@ export type Metadata = {
   attributes: Attributes[];
 };
 
-export type CollectionItem = {
+type CollectionItem = {
+  tokenId: number;
   tokenOwner: string;
-  metadata: Metadata | undefined;
+  name: string;
+  image: string;
+};
+
+export type Collection = CollectionItem[];
+
+export type NFTData = {
+  tokenId: number;
+  tokenOwner: string;
+  metadata: Metadata;
 };
 
 export enum TokenRarity {
