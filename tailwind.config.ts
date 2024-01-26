@@ -26,8 +26,13 @@ const config: Config = {
         "sm-black": "4px 4px 20px rgba(0, 0, 0, 0.35)",
         "sm-white": "4px 4px 20px rgba(256, 256, 256, 0.1)"
       },
+      boxShadow: {
+        "sm-black": "0px 0px 16px rgba(0, 0, 0, 1)",
+        "sm-white": "4px 4px 20px rgba(256, 256, 256, 0.1)"
+      },
       letterSpacing: {
-        wide: ".2em",
+        wide: ".05em",
+        wider: ".2em",
         widest: ".25em"
       }
     }
