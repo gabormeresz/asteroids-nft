@@ -1,7 +1,7 @@
 import * as actions from "@/actions";
 import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 export async function POST(request: NextRequest) {
   const authorization = headers().get("authorization");
@@ -25,13 +25,16 @@ export async function POST(request: NextRequest) {
 
   if (revalidateNft) {
     // actions.revalidateItem(tokenId);
-    console.log("revalidating from API");
-    console.log(`/collection/${tokenId.toString()}`);
-    revalidatePath(`/collection/${tokenId.toString()}`);
+    console.log(`revalidating from API: /collection/${tokenId.toString()}`);
+    // revalidatePath(`/collection/${tokenId.toString()}`);
+    revalidateTag(tokenId.toString());
   }
 
   if (revalidateCollection) {
-    actions.revalidateCollection();
+    // actions.revalidateCollection();
+    console.log(`revalidating from API: /collection`);
+    // revalidatePath("/collection");
+    revalidateTag("collection");
   }
 
   return Response.json({
