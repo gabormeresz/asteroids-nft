@@ -5,7 +5,7 @@ export const getNFT = async (tokenId: string) => {
     const response = await fetch(
       `${process.env.BACKEND_APP_URL}/nft?tokenId=${tokenId}`,
       {
-        next: { tags: [tokenId], revalidate: 0 }
+        next: { tags: [tokenId] }
       }
     );
     const nft = (await response.json()) as NFTData;
