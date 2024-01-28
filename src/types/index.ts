@@ -25,12 +25,12 @@ export type NFTData = {
   metadata: Metadata;
 };
 
-export enum TokenRarity {
+export enum NftRarity {
   LEGENDARY = "LEGENDARY",
   COMMON = "COMMON"
 }
 
-export type CommonTokenTraits = {
+export type CommonNftTraits = {
   traitType: string;
   traitValue: string;
   lore: string;

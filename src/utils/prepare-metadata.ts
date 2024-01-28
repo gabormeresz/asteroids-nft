@@ -1,15 +1,15 @@
-import { CommonTokenTraits, Metadata, TokenRarity } from "@/types";
+import { CommonNftTraits, Metadata, NftRarity } from "@/types";
 
 export const prepareMetadata = (metadata: Metadata) => {
   let lore: string[] = [];
-  let traits: CommonTokenTraits[] = [];
-  let rarity: TokenRarity;
+  let traits: CommonNftTraits[] = [];
+  let rarity: NftRarity;
 
   if (metadata.attributes[0].value === "Legendary") {
-    rarity = TokenRarity.LEGENDARY;
+    rarity = NftRarity.LEGENDARY;
     lore = metadata.attributes[1].value.split("\n");
   } else {
-    rarity = TokenRarity.COMMON;
+    rarity = NftRarity.COMMON;
     traits = [
       {
         traitType: "Composition",

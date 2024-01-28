@@ -1,13 +1,13 @@
-import { CommonTokenTraits, TokenRarity } from "@/types";
+import { CommonNftTraits, NftRarity } from "@/types";
 
-type TokenDescriptionProps = {
-  rarity: TokenRarity;
+type NftDescriptionProps = {
+  rarity: NftRarity;
   lore: string[];
-  traits: CommonTokenTraits[];
+  traits: CommonNftTraits[];
 };
 
-const TokenDescription = ({ rarity, lore, traits }: TokenDescriptionProps) => {
-  if (rarity === TokenRarity.LEGENDARY) {
+const NftDescription = ({ rarity, lore, traits }: NftDescriptionProps) => {
+  if (rarity === NftRarity.LEGENDARY) {
     return (
       <div className="flex flex-col font-light gap-2 leading-tight">
         <h2 className="text-2xl pb-3 font-normal text-gray-200">Legendary</h2>
@@ -18,7 +18,7 @@ const TokenDescription = ({ rarity, lore, traits }: TokenDescriptionProps) => {
         ))}
       </div>
     );
-  } else if (rarity === TokenRarity.COMMON) {
+  } else if (rarity === NftRarity.COMMON) {
     return (
       <div className="flex flex-col gap-8 leading-tight">
         {traits.map((trait, i) => (
@@ -37,4 +37,4 @@ const TokenDescription = ({ rarity, lore, traits }: TokenDescriptionProps) => {
   }
 };
 
-export default TokenDescription;
+export default NftDescription;
