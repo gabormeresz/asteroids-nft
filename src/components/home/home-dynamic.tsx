@@ -65,111 +65,78 @@ const HomeDynamicContent = () => {
   let content: React.ReactElement;
 
   if (!isConnected) {
-    content = (
-      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48 px-10">
-        <div
-          className={`flex flex-col items-center gap-2 text-white font-light ${jura.variable} font-mono`}
-        >
-          <h2 className="text-2xl">
-            Welcome to the Cosmos Craze Minting Page,
-          </h2>
-          <div className="pb-8">
-            <p className="sm:text-center">
-              where celestial wonders and cosmic whimsy collide! Unleash your
-              stellar creativity by connecting your wallet and minting a
-              one-of-a-kind NFT from our vibrant asteroid collection. Connect
-              now and mint your celestial masterpiece! 🚀💫
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-8 items-center">
-            <ConnectButton />
-            <Link href="/collection">
-              <Button text="VIEW COLLECTION" secondary />
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
+    content = renderContent({
+      title: "Welcome to the Cosmos Craze Minting Page,",
+      message:
+        "where celestial wonders and cosmic whimsy collide! Unleash your stellar creativity by connecting your wallet and minting a one-of-a-kind NFT from our vibrant asteroid collection. Connect now and mint your celestial masterpiece! 🚀💫",
+      button: <ConnectButton />
+    });
   } else if (chainId !== 80001) {
-    content = (
-      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48 px-10">
-        <div
-          className={`flex flex-col items-center gap-2 text-white font-light ${jura.variable} font-mono`}
-        >
-          <h2 className="text-2xl">
-            Welcome to the Cosmos Craze Minting Page,
-          </h2>
-          <p className="sm:text-center">
-            dive into a universe of color, neon brilliance, and playful memes as
-            you embark on a journey to claim your own piece of the cosmic
-            mosaic.
-          </p>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-8 items-center">
-          <Button
-            text="⚠️ Wrong Network. Please change to Mumbai!"
-            disabled
-            warning
-          />
-          <Link href="/collection">
-            <Button text="VIEW COLLECTION" secondary />
-          </Link>
-        </div>
-      </div>
-    );
+    content = renderContent({
+      title: "Welcome to the Cosmos Craze Minting Page,",
+      message:
+        "dive into a universe of color, neon brilliance, and playful memes as you embark on a journey to claim your own piece of the cosmic mosaic.",
+      button: (
+        <Button
+          text="⚠️ Wrong Network. Please change to Mumbai!"
+          disabled
+          warning
+        />
+      )
+    });
   } else if (!tokenIdHasLoaded) {
     content = <Loading />;
   } else if (!userTokenId) {
-    content = (
-      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48 px-10">
-        <div
-          className={`flex flex-col items-center gap-2 text-white font-light ${jura.variable} font-mono`}
-        >
-          <h2 className="text-2xl">
-            Welcome to the Cosmos Craze Minting Page,
-          </h2>
-          <p className="sm:text-center">
-            dive into a universe of color, neon brilliance, and playful memes as
-            you embark on a journey to claim your own piece of the cosmic
-            mosaic.
-          </p>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-8 items-center">
-          <Button text="MINT MY ASTEROID" onClick={mintHandler} />
-          <Link href="/collection">
-            <Button text="VIEW COLLECTION" secondary />
-          </Link>
-        </div>
-
-        {isModalOpen && <MintingModal hash={mintTxHash} />}
-      </div>
-    );
+    content = renderContent({
+      title: "Welcome to the Cosmos Craze Minting Page,",
+      message:
+        "dive into a universe of color, neon brilliance, and playful memes as you embark on a journey to claim your own piece of the cosmic mosaic.",
+      button: <Button text="MINT MY ASTEROID" onClick={mintHandler} />
+    });
   } else {
-    content = (
-      <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48 px-10">
-        <div
-          className={`flex flex-col items-center gap-2 text-white font-light ${jura.variable} font-mono`}
-        >
-          <h2 className="text-2xl">Congratulations, cosmic explorer!</h2>
-          <p className="sm:text-center	">
-            Welcome to the Cosmos Craze galaxy, where your celestial treasure is
-            now yours to cherish and share across the cosmos! ✨
-          </p>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-8 items-center">
-          <Link href={`/collection/${userTokenId}`}>
-            <Button text="VIEW MY ASTEROID" />
-          </Link>
-          <Link href="/collection">
-            <Button text="VIEW COLLECTION" secondary />
-          </Link>
-        </div>
-      </div>
-    );
+    content = renderContent({
+      title: "Congratulations, cosmic explorer!",
+      message:
+        "Welcome to the Cosmos Craze galaxy, where your celestial treasure is now yours to cherish and share across the cosmos! ✨",
+      button: (
+        <Link href={`/collection/${userTokenId}`}>
+          <Button text="VIEW MY ASTEROID" />
+        </Link>
+      )
+    });
   }
 
-  return content;
+  return (
+    <>
+      {content}
+      {isModalOpen && <MintingModal hash={mintTxHash} />}
+    </>
+  );
 };
 
 export default HomeDynamicContent;
+
+const renderContent = ({
+  title,
+  message,
+  button
+}: {
+  title: string;
+  message: string;
+  button: React.ReactElement;
+}) => (
+  <div className="flex flex-col items-center gap-10 max-w-4xl min-h-48 px-10">
+    <div
+      className={`flex flex-col items-center gap-2 text-white font-light ${jura.variable} font-mono`}
+    >
+      <h2 className="text-2xl">{title}</h2>
+      <p className="sm:text-center">{message}</p>
+    </div>
+    <div className="flex flex-col sm:flex-row gap-8 items-center">
+      {button}
+      <Link href="/collection">
+        <Button text="VIEW COLLECTION" secondary />
+      </Link>
+    </div>
+  </div>
+);
