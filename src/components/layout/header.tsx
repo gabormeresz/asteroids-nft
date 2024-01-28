@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { lexend_zetta } from "@/fonts";
-import ConnectButton from "@/components/ui/connect-button";
+import ConnectButton from "@/components/layout/connect-button";
 import logo from "../../../public/logo.svg";
 
 const Header = () => {

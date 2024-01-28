@@ -13,7 +13,7 @@ import { contractAddress, contractABI } from "@/constants/index";
 import Button from "@/components/ui/button";
 import Loading from "@/components/ui/loading";
 import MintingModal from "@/components/home/minting-modal";
-import ConnectButton from "@/components/ui/connect-button";
+import ConnectButton from "@/components/layout/connect-button";
 
 const HomeDynamicContent = () => {
   const { walletProvider } = useWeb3ModalProvider();
