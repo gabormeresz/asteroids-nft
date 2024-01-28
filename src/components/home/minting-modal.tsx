@@ -10,7 +10,7 @@ interface MintingModalProps {
 const MintingModal = ({ hash }: MintingModalProps) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="flex flex-col items-center justify-cente bg-[#111111] text-white p-12 pt-0 rounded-2xl shadow-lg">
+      <div className="flex flex-col items-center justify-center bg-[#111111] text-white p-12 pt-0 rounded-2xl shadow-lg">
         <Loading customText="Minting in progress..." />
         <Link
           href={`https://mumbai.polygonscan.com/tx/${hash}`}
