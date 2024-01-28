@@ -21,8 +21,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <Web3ModalProvider>
-        {/* <body className="bg-[#1E2631] sm:bg-[url('../../public/background.jpg')] bg-cover bg-fixed bg-center h-screen h-full overflow-auto"> */}
-        <body className=" h-screen h-full overflow-auto">
+        <body>
           <div className="-z-10 fixed bg-cover bg-scroll bg-no-repeat bg-center bg-[url('../../public/background.jpg')] w-full h-screen left-0 top-0"></div>
           <div className="h-full flex flex-col justify-between gap-4">
             <Header />
