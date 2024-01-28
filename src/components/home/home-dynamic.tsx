@@ -33,9 +33,6 @@ const HomeDynamicContent = () => {
       const userTokenId = await actions.getMintedTokenId(address);
       setUserTokenId(userTokenId);
       setTokenIdHasLoaded(true);
-      // if (hasMinted && userTokenId) {
-      //   actions.revalidateItem(userTokenId.toString());
-      // }
     };
     if (isConnected && chainId === 80001) {
       getMintedTokenId();
