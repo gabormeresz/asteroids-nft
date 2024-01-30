@@ -21,9 +21,9 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <Web3ModalProvider>
-        <body className="bg-gray-800 h-full">
+        <body className="bg-gray-800">
           <div className="-z-10 fixed bg-cover bg-scroll bg-no-repeat bg-center bg-[url('../../public/background.jpg')] w-full h-screen left-0 top-0"></div>
-          <div className="h-full flex flex-col justify-between gap-4">
+          <div className="h-full h-screen flex flex-col justify-between gap-4">
             <Header />
             {children}
             <Footer />
