@@ -10,6 +10,8 @@ Welcome to the Asteroids project — an experimental NFT collection featuring 10
 
 - **Metadata Hosting:** The metadata and the images for each Asteroid NFT is securely hosted on IPFS via Pinata.
 
+- **Backend Services:** A websocket service and a backend with MongoDB connection work tirelessly on AWS to keep everything up to date.
+
 ## Getting Started
 
 1. **Explore the Cosmos:** Visit the [Asteroids](https://asteroids-nft.vercel.app/) website.
