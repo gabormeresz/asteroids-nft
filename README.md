@@ -16,7 +16,7 @@ Welcome to the Asteroids project — an experimental NFT collection featuring 10
 
   [Link to Websocket repository](https://github.com/gabormeresz/asteroids-websocket)
 
-  [Link to backend repository](https://github.com/gabormeresz/asteroids-backend)
+  [Link to Backend repository](https://github.com/gabormeresz/asteroids-backend)
 
 ## Getting Started
 
