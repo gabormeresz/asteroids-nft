@@ -8,15 +8,15 @@ Welcome to the Asteroids project — an experimental NFT collection featuring 10
 
 - **Smart Contract:** The Asteroids NFTs are governed by a custom ERC-721 smart contract deployed on the Mumbai Testnet.
 
-  [Link to Smart Contract repository](https://github.com/gabormeresz/asteroids-smart-contract/)
+  [Smart Contract repository](https://github.com/gabormeresz/asteroids-smart-contract/)
 
 - **Metadata Hosting:** The metadata and the images for each Asteroid NFT is securely hosted on IPFS via Pinata.
 
 - **Backend Services:** A websocket service and a backend with MongoDB connection work tirelessly on AWS to keep everything up to date.
 
-  [Link to Websocket repository](https://github.com/gabormeresz/asteroids-websocket)
+  [Websocket repository](https://github.com/gabormeresz/asteroids-websocket)
 
-  [Link to Backend repository](https://github.com/gabormeresz/asteroids-backend)
+  [Backend repository](https://github.com/gabormeresz/asteroids-backend)
 
 ## Getting Started
 
